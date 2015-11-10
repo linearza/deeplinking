@@ -43,19 +43,19 @@
   </head>
   <body>
  
-  <!-- <h1>REDIRECT PAGE</h1> -->
+  <h1>REDIRECT PAGE</h1>
 
   <script type="text/javascript">
     
-      var link = window.location.search.split("?")[1];
+      var link = 'samewave://#/' + window.location.search.split("?")[1];
       console.log('link>>', link);
 
-    
+      window.onload = function() {
         window.location = 'samewave://#/' + link;
-        setTimeout(
+        setTimeout(function(){
           window.location = 'no-app.html'
-        , 10000);
-      
+        }, 2000);
+      }
       // window.location.replace(window.location.pathname + '#/' + url.split("://")[1]);
 
   </script>
