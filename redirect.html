@@ -52,15 +52,12 @@
 
       window.onload = function() {
 
-        try {
-          window.location = 'samewave://#/' + link;
-        }
-        catch(err) {
-          setTimeout(function(){
-            window.location = 'no-app.html'
-          }, 2000);
-        }
+        window.location = 'no-app.html';
         
+        setTimeout(function(){
+          
+          window.location = 'samewave://#/' + link;
+        }, 2000);
       }
       // window.location.replace(window.location.pathname + '#/' + url.split("://")[1]);
 
