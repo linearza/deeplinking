@@ -46,15 +46,21 @@
   <h1>REDIRECT PAGE</h1>
 
   <script type="text/javascript">
-    
+
       var link = 'samewave://#/' + window.location.search.split("?")[1];
       console.log('link>>', link);
 
       window.onload = function() {
-        window.location = 'samewave://#/' + link;
-        setTimeout(function(){
-          window.location = 'no-app.html'
-        }, 2000);
+
+        try {
+          window.location = 'samewave://#/' + link;
+        }
+        catch(err) {
+          setTimeout(function(){
+            window.location = 'no-app.html'
+          }, 2000);
+        }
+        
       }
       // window.location.replace(window.location.pathname + '#/' + url.split("://")[1]);
 
