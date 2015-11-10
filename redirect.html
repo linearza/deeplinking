@@ -42,10 +42,23 @@
 
   </head>
   <body>
+ 
+  <!-- <h1>REDIRECT PAGE</h1> -->
 
-    <a class="button" href="redirect.html?Standard">Standard</a>
-    <a class="button" href="redirect.html?people">People</a>
-    <a class="button" href="redirect.html?streams/1/chat">Streams</a>
+  <script type="text/javascript">
     
+      var link = window.location.search.split("?")[1];
+      console.log('link>>', link);
+
+    
+        window.location = 'samewave://#/' + link;
+        setTimeout(
+          window.location = 'no-app.html'
+        , 10000);
+      
+      // window.location.replace(window.location.pathname + '#/' + url.split("://")[1]);
+
+  </script>
+
   </body>
 </html>
