@@ -46,66 +46,47 @@
   <h1>REDIRECT PAGE</h1>
 
   <script type="text/javascript">
-    function loadXMLDoc() {
-        var xmlhttp;
+    // function loadXMLDoc() {
+    //     var xmlhttp;
 
-        if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-        } 
+    //     if (window.XMLHttpRequest) {
+    //         // code for IE7+, Firefox, Chrome, Opera, Safari
+    //         xmlhttp = new XMLHttpRequest();
+    //     } 
 
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
-               if(xmlhttp.status == 200){
-                  alert('>>>>> success!');
-               }
-               else if(xmlhttp.status == 400) {
-                  alert('There was an error 400')
-               }
-               else {
-                   alert('status', xmlhttp.status);
-               }
-            }
-        }
+    //     xmlhttp.onreadystatechange = function() {
+    //         if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+    //            if(xmlhttp.status == 200){
+    //               alert('>>>>> success!');
+    //            }
+    //            else if(xmlhttp.status == 400) {
+    //               alert('There was an error 400')
+    //            }
+    //            else {
+    //                alert('status', xmlhttp.status);
+    //            }
+    //         }
+    //     }
 
-        xmlhttp.open("GET", "samewave://", true);
-        xmlhttp.send();
-    }
+    //     xmlhttp.open("GET", "samewave://", true);
+    //     xmlhttp.send();
+    // }
 
-    loadXMLDoc();
+    // loadXMLDoc();
   </script>
 
   <script type="text/javascript">
 
-    // function checkUrl(url) {
-    //   var request = false;
-    //   if (window.XMLHttpRequest) {
-    //           request = new XMLHttpRequest;
-    //   } else if (window.ActiveXObject) {
-    //           request = new ActiveXObject("Microsoft.XMLHttp");
-    //   }
+      var link = 'samewave://#/' + window.location.search.split("?")[1];
+      console.log('link>>', link);
 
-    //   if (request) {
-    //           request.open("GET", url);
-    //           if (request.status == 200) { return true; }
-    //   }
-
-    //   return false;
-    // }
-
-
-    //   var link = 'samewave://#/' + window.location.search.split("?")[1];
-    //   console.log('link>>', link);
-
-    //   window.onload = function() {
-
-
-    //     window.location = 'samewave://#/' + link;
-    //     setTimeout(function(){
-    //       window.location = 'no-app.html';
-    //     }, 2000);
-    //   }
-    //   // window.location.replace(window.location.pathname + '#/' + url.split("://")[1]);
+      window.onload = function() {
+        window.location = 'samewave://#/' + link;
+        setTimeout(function(){
+          window.location = 'no-app.html';
+        }, 50);
+      }
+      // window.location.replace(window.location.pathname + '#/' + url.split("://")[1]);
 
   </script>
 
