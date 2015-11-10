@@ -57,7 +57,7 @@
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
                if(xmlhttp.status == 200){
-                   document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+                  alert('>>>>> success!');
                }
                else if(xmlhttp.status == 400) {
                   alert('There was an error 400')
