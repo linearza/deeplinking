@@ -46,20 +46,66 @@
   <h1>REDIRECT PAGE</h1>
 
   <script type="text/javascript">
+    function loadXMLDoc() {
+        var xmlhttp;
 
-      var link = 'samewave://#/' + window.location.search.split("?")[1];
-      console.log('link>>', link);
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } 
 
-      window.onload = function() {
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+               if(xmlhttp.status == 200){
+                   document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+               }
+               else if(xmlhttp.status == 400) {
+                  alert('There was an error 400')
+               }
+               else {
+                   alert('something else other than 200 was returned')
+               }
+            }
+        }
 
-        window.location = 'no-app.html';
-        
-        setTimeout(function(){
-          
-          window.location = 'samewave://#/' + link;
-        }, 2000);
-      }
-      // window.location.replace(window.location.pathname + '#/' + url.split("://")[1]);
+        xmlhttp.open("GET", "samewave://", true);
+        xmlhttp.send();
+    }
+
+    loadXMLDoc();
+  </script>
+
+  <script type="text/javascript">
+
+    // function checkUrl(url) {
+    //   var request = false;
+    //   if (window.XMLHttpRequest) {
+    //           request = new XMLHttpRequest;
+    //   } else if (window.ActiveXObject) {
+    //           request = new ActiveXObject("Microsoft.XMLHttp");
+    //   }
+
+    //   if (request) {
+    //           request.open("GET", url);
+    //           if (request.status == 200) { return true; }
+    //   }
+
+    //   return false;
+    // }
+
+
+    //   var link = 'samewave://#/' + window.location.search.split("?")[1];
+    //   console.log('link>>', link);
+
+    //   window.onload = function() {
+
+
+    //     window.location = 'samewave://#/' + link;
+    //     setTimeout(function(){
+    //       window.location = 'no-app.html';
+    //     }, 2000);
+    //   }
+    //   // window.location.replace(window.location.pathname + '#/' + url.split("://")[1]);
 
   </script>
 
