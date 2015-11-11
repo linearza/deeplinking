@@ -46,17 +46,29 @@
 
   <script type="text/javascript">
 
-      window.onload = function() {
-        var link = window.location.search.split("?")[1];
-        alert('link', link);
-        window.location.replace('samewave://#/' + link);
-        window.focus();
-        window.close();
-        setTimeout(function(){
-          window.location.replace('https://torid-inferno-3264.firebaseapp.com/#/' + link);
-        }, 50);
-      }
+    window.onload = function() {
+      var link = window.location.search.split("?")[1];
 
+      window.location = 'samewave://' + link;
+      window.focus();
+      window.close();
+
+      //fallback
+      setTimeout(function(){
+        window.location = 'https://torid-inferno-3264.firebaseapp.com/#/' + link;
+      }, 100);
+    }
+
+    // var link = window.location.search.split("?")[1];
+    // console.log('link>>', link);
+    // window.onload = function() {
+    //   window.location = 'samewave://' + link;
+    //   setTimeout(function(){
+    //     window.location = 'no-app.html'
+    //   }, 2000);
+    // }
+    // window.location.replace(window.location.pathname + '#/' + url.split("://")[1]);
+ 
   </script>
 
   </body>
