@@ -48,6 +48,7 @@
 
       window.onload = function() {
         var link = window.location.search.split("?")[1];
+        alert('link', link);
         window.location.replace('samewave://#/' + link);
         window.focus();
         window.close();
