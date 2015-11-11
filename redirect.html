@@ -17,6 +17,7 @@
         font-family: tahoma, arial;
         font-size: 30px;
         text-align: center;
+        background: #F1F2F5;
       }
 
       .button {
@@ -42,51 +43,19 @@
 
   </head>
   <body>
- 
-  <h1>REDIRECT PAGE</h1>
-
-  <script type="text/javascript">
-    // function loadXMLDoc() {
-    //     var xmlhttp;
-
-    //     if (window.XMLHttpRequest) {
-    //         // code for IE7+, Firefox, Chrome, Opera, Safari
-    //         xmlhttp = new XMLHttpRequest();
-    //     } 
-
-    //     xmlhttp.onreadystatechange = function() {
-    //         if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
-    //            if(xmlhttp.status == 200){
-    //               alert('>>>>> success!');
-    //            }
-    //            else if(xmlhttp.status == 400) {
-    //               alert('There was an error 400')
-    //            }
-    //            else {
-    //                alert('status', xmlhttp.status);
-    //            }
-    //         }
-    //     }
-
-    //     xmlhttp.open("GET", "samewave://", true);
-    //     xmlhttp.send();
-    // }
-
-    // loadXMLDoc();
-  </script>
 
   <script type="text/javascript">
 
       var link = 'samewave://#/' + window.location.search.split("?")[1];
-      console.log('link>>', link);
 
       window.onload = function() {
         window.location = 'samewave://#/' + link;
+        window.focus();
+        window.close();
         setTimeout(function(){
-          window.location = 'no-app.html';
+          window.location = 'https://torid-inferno-3264.firebaseapp.com/#/forgot-password';
         }, 50);
       }
-      // window.location.replace(window.location.pathname + '#/' + url.split("://")[1]);
 
   </script>
 
